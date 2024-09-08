@@ -4,6 +4,13 @@ This code allows replicating the image experiments of [**AC/DC: Alternating Comp
 
 The code is based on the open-source code for the WoodFisher neural network compression paper, which can be found on Github [here](http://github.com/IST-DASLab/WoodFisher "here").
 
+
+## Setup
+
+Uses `Python 3.8.10` and a little bit of conda.
+ 
+
+
 ## To Run:
 We recommend access to at least one GPU for running CIFAR-10 and CIFAR-100 training and at least 2-4 GPUs for running Imagenet training. The ImageNet experiments were run using PyTorch 1.7.1, but the code was also tested using PyTorch 1.8. We recommend, if possible, using WandB for experiments tracking. Otherwise, all code should be run with the `--use_wandb` flag **disabled**.
 
