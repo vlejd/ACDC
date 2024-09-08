@@ -1,4 +1,4 @@
-declare -a gpu=2,3
+declare -a gpu=0
 declare -a manual_seed=(8)
 
 
@@ -6,7 +6,7 @@ for ((j=0;j<${#manual_seed[@]};++j));
 do
 python main.py \
 	--dset=cifar100 \
-	--dset_path=~/Datasets/cifar100 \
+	--dset_path=/projects/p490-24-t/data/cifar100 \
 	--arch=wideresnet \
 	--config_path=./configs/neurips/iht_cifar100_wideresnet_steplr_freq20_s95.yaml \
 	--workers=4 \

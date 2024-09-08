@@ -8,7 +8,10 @@ The code is based on the open-source code for the WoodFisher neural network comp
 ## Setup
 
 Uses `Python 3.8.10` and a little bit of conda.
- 
+
+- `conda create -n "acdc_slurm" python=3.8.10`
+- `conda activate acdc_slurm`
+- `pip install -r requirements.txt`
 
 
 ## To Run:

@@ -1,7 +1,8 @@
-declare -a gpu=1
+declare -a gpu=0
 declare -a manual_seed=(21)
 declare -a num_rand=1000
-declare -a sparsities=(50 75 90 95)
+#declare -a sparsities=(50 75 90 95)
+declare -a sparsities=(50)
 
 for ((j=0;j<${#manual_seed[@]};++j));
 do
@@ -9,7 +10,7 @@ for ((i=0;i<${#sparsities[@]};++i));
 do
 python main.py \
 	--dset=cifar10 \
-	--dset_path=/home/Datasets/cifar10 \
+	--dset_path=/projects/p490-24-t/data/cifar10 \
 	--arch=resnet20 \
 	--config_path=./configs/neurips/iht_cifar10_resnet20_unstructured_insta_prune_freq20_${sparsities[i]}_constant.yaml \
 	--workers=4 \
