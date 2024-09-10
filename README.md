@@ -13,6 +13,12 @@ Uses `Python 3.8.10` and a little bit of conda.
 - `conda activate acdc_slurm`
 - `pip install -r requirements.txt`
 
+If you want to run on imagenet, do this: https://gist.github.com/antoinebrl/7d00d5cb6c95ef194c737392ef7e476a
+Cifar10 and Cifar100 are downloaded automatically.
+
+To run exmaple experiment on imagenet with slurm run `sbatch gpu_test.sh` for inspiration.
+
+
 
 ## To Run:
 We recommend access to at least one GPU for running CIFAR-10 and CIFAR-100 training and at least 2-4 GPUs for running Imagenet training. The ImageNet experiments were run using PyTorch 1.7.1, but the code was also tested using PyTorch 1.8. We recommend, if possible, using WandB for experiments tracking. Otherwise, all code should be run with the `--use_wandb` flag **disabled**.

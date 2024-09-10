@@ -1,4 +1,4 @@
-declare -a gpu=0,1,2,3
+declare -a gpu=0 #0,1,2,3
 declare -a manual_seed=(3)
 
 
@@ -6,10 +6,10 @@ for ((j=0;j<${#manual_seed[@]};++j));
 do
 python main.py \
 	--dset=imagenet \
-	--dset_path=/home/Datasets/ILSVRC \
+	--dset_path=/projects/p490-24-t/data/imagenet/ \
 	--arch=resnet50 \
 	--config_path=./configs/neurips/iht_imagenet_resnet50_insta_cosinelr_s80_ep100.yaml \
-	--workers=20 \
+	--workers=1 \
 	--epochs=100 \
 	--fp16 \
 	--reset_momentum_after_recycling \

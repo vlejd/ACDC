@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH -J "sample_cifar10"     # name of job in SLURM
+#SBATCH -J "imgnet"     # name of job in SLURM
 #SBATCH -p gpu
 #SBATCH -G 1
-#SBATCH -o joblog/run_cifar10_randomlabels_iht_no_da.txt
-#SBATCH -e joblog/run_cifar10_randomlabels_iht_no_da.txt
+#SBATCH -o joblog/run_imagenet_iht_oneshot_cosinelr_s80_ep100.sh
+#SBATCH -e joblog/run_imagenet_iht_oneshot_cosinelr_s80_ep100.sh
 #SBATCH --account=p490-24-t
-#SBATCH --time=10
-
+#SBATCH --time=60
+#SBATCH --mem=250GB
 echo "Launched at $(date)"
 echo "Job ID: ${SLURM_JOBID}"
 echo "Node list: ${SLURM_NODELIST}"
@@ -27,6 +27,6 @@ conda activate acdc_slurm
 
 
 echo "Lets get this party started!"
-bash run_cifar10_randomlabels_iht_no_da.sh
+bash run_imagenet_iht_oneshot_cosinelr_s80_ep100.sh
 
 
