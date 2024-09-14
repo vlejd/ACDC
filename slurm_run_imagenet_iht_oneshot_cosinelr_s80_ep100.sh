@@ -9,7 +9,7 @@
 #SBATCH --time=60
 #SBATCH --mem=200GB
 #--exclusive probably gets me 4 gpus...
-#or srun  -J "imgnet" -c 40 -p gpu -G 1 -o joblog/slurm_run_imagenet_iht_oneshot_cosinelr_s80_ep100.txt -e joblog/slurm_run_imagenet_iht_oneshot_cosinelr_s80_ep100.txt --account=p490-24-t --time=2800 --mem=200GB slurm_run_imagenet_iht_oneshot_cosinelr_s80_ep100.sh
+#or srun  -J "imgnet" -c 40 -p gpu -G 1 -o joblog/slurm_run_imagenet_iht_oneshot_cosinelr_s80_ep100.txt -e joblog/slurm_run_imagenet_iht_oneshot_cosinelr_s80_ep100.txt --account=p490-24-t --time=2800 --mem=180G slurm_run_imagenet_iht_oneshot_cosinelr_s80_ep100.sh
 
 echo "Launched at $(date)"
 echo "Job ID: ${SLURM_JOBID}"
@@ -23,18 +23,7 @@ module load cuda/12.0.1
 
 echo "Move the dataset to /work"
 
-target_dataset=/scratch/p490-24-t/data/imagenet
-mkdir -p ${target_dataset}
-
-echo "Copy train imagenet to ${target_dataset}"
-date
-rsync -r /projects/p490-24-t/data/imagenet/train ${target_dataset}
-date
-echo "Copy val imagenet to ${target_dataset}"
-date
-rsync -r /projects/p490-24-t/data/imagenet/val ${target_dataset}
-date
-
+target_dataset=/scratch/p490-24-t/data/imagenet/
 
 echo "Lets get this party started!"
 
